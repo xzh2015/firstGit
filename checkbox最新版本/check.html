@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>多选框</title>
+    <link rel="stylesheet" href="./css/check.css">
+   
+</head>
+
+<body>
+   <form action="">
+    <div class="centent">
+        <ul class="select">
+            <li class="select-result">
+                <dl>
+                    <dt>筛选条件：</dt>
+                    <dd class="select-no">暂时没有选择过滤条件</dd>
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select_info">
+                    <dt>内容1:</dt>
+                    <dd class="selected">
+                        <a href="javascript:;">基本信息</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">民警信息</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">医疗卫生</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">奖励情况</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">违纪情况</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">年度经费</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">深挖犯罪</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">装备配备</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">信息化应用</a>
+                    </dd>
+    
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select_type">
+                    <dt>内容2:</dt>
+                    <dd class="selected">
+                        <a href="javascript:;">状态</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">监所类型</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">单位名称</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">姓名</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">性别</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">身份</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">职务</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">岗位</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">文化程度</a>
+                    </dd>
+                    <dd class="multiple">
+                        <a href="javascript:;" >+多选</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="select-list">
+                <dl id="select_area">
+                    <dt>内容3：</dt>
+                    <dd class="select-all selected">
+                        <a href="javascript:;">看守所</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">拘留所</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">戒毒所</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:;">医疗所</a>
+                    </dd>
+                    <dd class="multiple">
+                        <a href="javascript:;">+多选</a>
+                    </dd>
+                </dl>
+            </li>
+            <label for="che">
+                <input type="checkbox" value="复选框" name="check" id="che" style="display:none;"> 复选框
+            </label>
+        </ul>
+    </div>
+   </form>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/arrJson.js"></script>
+    <script src="js/check.js"></script>
+</body>
+
+</html>

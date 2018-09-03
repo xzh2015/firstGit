@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <div class="main">
+
+        <div class="title">筛选条件：
+            <span class="data">
+                <span class="data1">暂时没有选择过滤条件</span>
+                <span class="data2"></span>
+                <span class="data3"></span>
+            </span>
+        </div>
+        <div class="content1">
+            <ul>
+                <li>内容1:</li>
+                <li><a href="#">基本信息</a></li>
+                <li><a href="#">民警信息</a></li>
+                <li><a href="#">医疗卫生</a></li>
+                <li><a href="#">奖励情况</a></li>
+                <li><a href="#">违纪情况</a></li>
+                <li><a href="#">年度情况</a></li>
+                <li><a href="#">控挖犯罪</a></li>
+                <li><a href="#">装备配备</a></li>
+                <li><a href="#">信息化应用</a></li>
+            </ul>  
+        </div>  
+       <br>
+        <div class="content2">
+            <ul></ul>
+        </div>
+        <br>
+        <div class="content3">
+            <ul>               
+            </ul>
+        </div>
+
+    </div>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function(){
+           
+            var aArr1 =$(".main .content1 ul li a");
+            var ulArr2 =$(".main .content2 ul");
+            var ulArr3 =$(".main .content3 ul");
+            
+            var data = $(".main .data");                      
+            var data1 = $(".main .data .data1"); 
+            var data2 = $(".main .data .data2"); 
+            var data3 = $(".main .data .data3"); 
+            var bol1 = false;
+            var bol2 = false;
+            //内容1点击情况开始
+            aArr1.on("click",function(){  
+                aArr1.removeClass("active");            
+                $(this).addClass("active"); 
+                var $span1 = $("<span>"+$(this).html()+"</span><span class='close'><sup>x</sup></span>");
+                data1.html(" ").append($span1);
+                data2.html("");
+                data3.html("");
+                ulArr3.html("")
+                if($(this).html()=="基本信息"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态基本信息</a></li><li><a href='#'>监所类型基本信息</a></li><li><a href='#'>单位名称基本信息</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="民警信息"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态民警信息</a></li><li><a href='#'>监所类型民警信息</a></li><li><a href='#'>单位名称民警信息</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="医疗卫生"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="奖励情况"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="违纪情况"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="年度情况"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="控挖犯罪"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }else if($(this).html()=="装备配备"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                } else if($(this).html()=="信息化应用"){
+                    var $content2 = $("<li>内容2:</li><li><a href='#'>状态</a></li><li><a href='#'>监所类型</a></li><li><a href='#'>单位名称</a></li><li class='checkbox'>+多选</li>");
+                    ulArr2.html("").append($content2);
+                }      
+
+                
+                $(".main .content2 .checkbox").on("click",function(){    
+                                 
+                    $(this).toggleClass("active");
+                    bol1 = !bol1;
+                    if(bol1==false){
+                        ulArr3.html("");
+                        data2.html("");
+                        data3.html("");
+                        aArr2.removeClass("active");
+                    }
+                });
+
+
+                var close1 = $(".main .data .data1 .close"); 
+                close1.on('click',function(){
+                    data1.html("暂时没有选择过滤条件");
+                    data2.html("");
+                    data3.html("");
+                    aArr1.removeClass("active");
+                    ulArr2.find("a").removeClass("active");
+                    ulArr3.find("a").removeClass("active");
+                    ulArr2.html("");
+                    ulArr3.html("");
+                });
+                //内容2点击情况开始
+                var aArr2 =$(".main .content2 ul li a");
+                aArr2.on("click",function(){
+                    
+                    aArr2.removeClass("active");            
+                    $(this).addClass("active"); 
+                    var $span2 = $("<span>"+$(this).html()+"</span><span class='close'><sup>x</sup></span>");
+                    data2.html(" ").append($span2);
+                    data3.html("");
+                    if($(this).html()=="状态基本信息"){
+
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3); 
+                    }else if($(this).html()=="监所类型基本信息"){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3);
+                    }else if($(this).html()=="单位名称基本信息"){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息1</a></li><li><a href='#'>看守所状态基本信息2</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3);
+                    }else if($(this).html()=="状态民警信息"){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态民警信息</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3);
+                    }else if($(this).html()=="监所类型民警信息"){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所监所类型民警信息</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3);
+                    }else if($(this).html()=="单位名称民警信息"){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所单位名称民警信息</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3);
+                    }else if($(this).html()=="状态" ||$(this).html()=="监所类型"||$(this).html()=="单位名称" ){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所</a></li><li class='checkbox'>+多选</li>");
+                        ulArr3.html("").append($content3);
+                    }
+                    
+                    var close2 = $(".main .data .data2 .close"); 
+                    close2.on('click',function(){
+                    data2.html("");
+                    data3.html("");
+                    ulArr2.find("a").removeClass("active");
+                    ulArr3.html("");
+                });
+                close1.on('click',function(){
+                    data1.html("暂时没有选择过滤条件");
+                    data2.html("");
+                    data3.html("");
+                    aArr1.removeClass("active");
+                    ulArr2.find("a").removeClass("active");
+                    ulArr3.find("a").removeClass("active");
+                    ulArr2.html("");
+                    ulArr3.html("");
+                });
+                //内容3点击情况开始
+                    var aArr3 =$(".main .content3 ul li a");
+                    aArr3.on("click",function(){
+                        aArr3.removeClass("active");            
+                        $(this).addClass("active");  
+                        var $span3 = $("<span>"+$(this).html()+"</span><span class='close'><sup>x</sup></span>");
+                        data3.html("").append($span3);
+                //内容3点击情况结束
+
+
+
+                //筛选条件点击关闭开始
+                //第三个span
+                var close3 = $(".main .data .data3 .close"); 
+                close3.on('click',function(){
+                    data3.html("");
+                    ulArr3.find("a").removeClass("active");
+                });
+                
+                //第二个span
+               
+                close2.on('click',function(){
+                    data2.html("");
+                    data3.html("");
+                    ulArr2.find("a").removeClass("active");
+                    ulArr3.html("");
+                });
+        
+                //第一个span
+                
+                close1.on('click',function(){
+                    data1.html("暂时没有选择过滤条件");
+                    data2.html("");
+                    data3.html("");
+                    aArr1.removeClass("active");
+                    ulArr2.find("a").removeClass("active");
+                    ulArr3.find("a").removeClass("active");
+                    ulArr2.html("");
+                    ulArr3.html("");
+                });
+
+                //筛选条件点击关闭关闭
+
+                    });
+                });            
+            });
+            
+       
+        });
+    </script>
+</body>
+</html>

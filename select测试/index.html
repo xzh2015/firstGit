@@ -64,7 +64,7 @@
                 data1.html(" ").append($span1);
                 data2.html("");
                 data3.html("");
-                ulArr3.html("")
+                ulArr3.html("");
                 if($(this).html()=="基本信息"){
                     var $content2 = $("<li>内容2:</li><li><a href='#'>状态基本信息</a></li><li><a href='#'>监所类型基本信息</a></li><li><a href='#'>单位名称基本信息</a></li><li class='checkbox'>+多选</li>");
                     ulArr2.html("").append($content2);
@@ -123,15 +123,110 @@
                 var aArr2 =$(".main .content2 ul li a");
                 aArr2.on("click",function(){
                     
-                    aArr2.removeClass("active");            
-                    $(this).addClass("active"); 
+                   
                     var $span2 = $("<span>"+$(this).html()+"</span><span class='close'><sup>x</sup></span>");
-                    data2.html(" ").append($span2);
+                    if(bol1){
+                            data2.append($span2);
+                           
+                        }
+                    else{
+                            data2.html(" ").append($span2);
+                            aArr2.removeClass("active");            
+                            $(this).addClass("active"); 
+                        }
                     data3.html("");
-                    if($(this).html()=="状态基本信息"){
+                    
+                    if(bol1){
+                        if($(this).html()=="状态基本信息"){                       
+                            if($(this).hasClass("active")){                          
+                                $(this).removeClass("active");
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所状态基本信息</a></li>',"");
+                                ulArr3.html(a);                                                                                                
+                            }
+                            else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息</a></li><li class='checkbox'>+多选</li>");                     
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                            }
 
-                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息</a></li><li class='checkbox'>+多选</li>");
-                        ulArr3.html("").append($content3); 
+
+
+                    }else if($(this).html()=="监所类型基本信息"){
+
+                        if($(this).hasClass("active")){                          
+                                $(this).removeClass("active");  
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所状态基本信息</a></li>',"");
+                                ulArr3.html(a);                          
+                            }else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li><a href='#'>看守所状态基本信息</a></li>");
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                            }
+
+                    }else if($(this).html()=="单位名称基本信息"){
+                        if($(this).hasClass("active")){                          
+                                $(this).removeClass("active");   
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所状态基本信息1</a></li><li><a href="#">看守所状态基本信息2</a></li>',"");
+                                ulArr3.html(a);                         
+                            }else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li><a href='#'>看守所状态基本信息1</a></li><li><a href='#'>看守所状态基本信息2</a></li>");
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                                }
+                    }else if($(this).html()=="状态民警信息"){
+                        if($(this).hasClass("active")){                          
+                                $(this).removeClass("active"); 
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所状态民警信息</a></li>',"");
+                                ulArr3.html(a);                           
+                            }else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li><a href='#'>看守所状态民警信息</a></li>");
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                            }
+                    }else if($(this).html()=="监所类型民警信息"){
+                        if($(this).hasClass("active")){                          
+                                $(this).removeClass("active");   
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所监所类型民警信息</a></li>',"");
+                                ulArr3.html(a);                          
+                            }else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li><a href='#'>看守所监所类型民警信息</a></li>");                       
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                            }
+                    }else if($(this).html()=="单位名称民警信息"){
+                        if($(this).hasClass("active")){                          
+                                $(this).removeClass("active");   
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所单位名称民警信息</a></li>',"");
+                                ulArr3.html(a);                        
+                            }else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li><a href='#'>看守所单位名称民警信息</a></li>");                      
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                            }
+                    }else if($(this).html()=="状态" ||$(this).html()=="监所类型"||$(this).html()=="单位名称" ){
+                        if($(this).hasClass("active")){                          
+                                $(this).removeClass("active");  
+                                var a = ulArr3.html();                                                               
+                                a = a.replace('<li><a href="#">看守所</a></li>',"");
+                                ulArr3.html(a);                        
+                            }else if(!$(this).hasClass("active")){
+                                var $content3 = $("<li><a href='#'>看守所</a></li>");                 
+                                ulArr3.append($content3);
+                                $(this).addClass("active"); 
+                            }
+                    }
+                    
+                    
+                    }else{
+                    if($(this).html()=="状态基本信息"){
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息</a></li><li class='checkbox'>+多选</li>");                     
+                        ulArr3.html("").append($content3);
                     }else if($(this).html()=="监所类型基本信息"){
                         var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态基本信息</a></li><li class='checkbox'>+多选</li>");
                         ulArr3.html("").append($content3);
@@ -142,16 +237,16 @@
                         var $content3 = $("<li>内容3:</li><li><a href='#'>看守所状态民警信息</a></li><li class='checkbox'>+多选</li>");
                         ulArr3.html("").append($content3);
                     }else if($(this).html()=="监所类型民警信息"){
-                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所监所类型民警信息</a></li><li class='checkbox'>+多选</li>");
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所监所类型民警信息</a></li><li class='checkbox'>+多选</li>");                       
                         ulArr3.html("").append($content3);
                     }else if($(this).html()=="单位名称民警信息"){
-                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所单位名称民警信息</a></li><li class='checkbox'>+多选</li>");
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所单位名称民警信息</a></li><li class='checkbox'>+多选</li>");                      
                         ulArr3.html("").append($content3);
                     }else if($(this).html()=="状态" ||$(this).html()=="监所类型"||$(this).html()=="单位名称" ){
-                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所</a></li><li class='checkbox'>+多选</li>");
+                        var $content3 = $("<li>内容3:</li><li><a href='#'>看守所</a></li><li class='checkbox'>+多选</li>");                 
                         ulArr3.html("").append($content3);
                     }
-                    
+                }
                     var close2 = $(".main .data .data2 .close"); 
                     close2.on('click',function(){
                     data2.html("");
